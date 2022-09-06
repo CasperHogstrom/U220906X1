@@ -22,20 +22,30 @@ body {
     text-align: center
 }
 
-#addition {
+#color {
     margin: 3px;
+    width: 10%;
+}
+
+#font {
+    margin: 3px;
+    width: 10%;
+}
+
+#addition {
+    margin: 2px;
 }
 
 #subtraction {
-    margin: 3x;
+    margin: 2px;
 }
 
 #multiplication {
-    margin: 3x;
+    margin: 2px;
 }
 
 #division {
-    margin: 3x;
+    margin: 2px;
 }
 
 #number1 {

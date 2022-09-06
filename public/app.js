@@ -1,17 +1,16 @@
 buildSite();
+buildSettings();
 buildCalculator();
 
 function buildSite() {
     
-    const targetSettings = document.getElementById('app');
     const divsettings = document.createElement('div');
     divsettings.setAttribute('id', 'settings')
-    targetSettings.appendChild(divsettings);
+    app.appendChild(divsettings);
 
-    const targetCalculator = document.getElementById('app');
     const divcalculator = document.createElement('div');
     divcalculator.setAttribute('id', 'calculator');
-    targetCalculator.appendChild(divcalculator);
+    app.appendChild(divcalculator);
 
     const settingsTitle = document.createElement('h1');
     settingsTitle.innerHTML = "Settings";
@@ -22,8 +21,27 @@ function buildSite() {
     calculator.appendChild(divCalcTitle);
 } 
 
-function buildCalculator() {
+function buildSettings() {
     
+    const btnColor = document.createElement('button');
+    btnColor.setAttribute('id', 'color');
+    btnColor.setAttribute('name', 'color');
+    btnColor.innerText = 'Color';
+    settings.appendChild(btnColor);
+
+    const btnFont = document.createElement('button');
+    btnFont.setAttribute('id', 'font');
+    btnFont.setAttribute('name', 'font');
+    btnFont.innerText = 'font';
+    settings.appendChild(btnFont);
+}
+
+function buildCalculator() {    
+
+    const numberInput1 = document.createElement('input');
+    numberInput1.setAttribute('id', 'number1');
+    calculator.appendChild(numberInput1);
+
     const btnAddition = document.createElement('button');
     btnAddition.setAttribute('id', 'addition');
     btnAddition.setAttribute('name', 'addition');
@@ -48,10 +66,6 @@ function buildCalculator() {
     btnDivision.innerText = '/';
     calculator.appendChild(btnDivision);
 
-    const numberInput1 = document.createElement('input');
-    numberInput1.setAttribute('id', 'number1');
-    calculator.appendChild(numberInput1);
-
     const numberInput2 = document.createElement('input');
     numberInput2.setAttribute('id', 'number2');
     calculator.appendChild(numberInput2);
@@ -59,6 +73,3 @@ function buildCalculator() {
     
 }
 
-function buildSettings() {
-
-}
