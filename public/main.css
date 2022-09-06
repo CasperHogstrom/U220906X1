@@ -2,10 +2,48 @@ body {
     background-color: palevioletred;
 }
 
-border {
-    
+#app {
+    width: 50%;
 }
 
-color {
+#settings {
+    border: 5px solid navy;
+    color: whitesmoke;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: center
+}
 
+#calculator {
+    border: 5px solid navy;
+    color: whitesmoke;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: center
+}
+
+#addition {
+    margin: 3px;
+}
+
+#subtraction {
+    margin: 3x;
+}
+
+#multiplication {
+    margin: 3x;
+}
+
+#division {
+    margin: 3x;
+}
+
+#number1 {
+    margin: 10px;
+    width: 20%;
+}
+
+#number2 {
+    margin: 10px;
+    width: 20%;
 }
