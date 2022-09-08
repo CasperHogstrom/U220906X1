@@ -14,7 +14,6 @@ body {
     padding-bottom: 10%;
     margin-bottom: 5px;
     text-align: center;
-    background-color: darkgray;
 }
 
 #calculator {
@@ -23,7 +22,6 @@ body {
     padding: 5px;
     margin-bottom: 5px;
     text-align: center;
-    background-color: darkgray;
 }
 
 #HSButton {
@@ -36,6 +34,14 @@ body {
     margin-left: 5%;
     margin-right: 5%;
     width: fit-content;
+}
+
+.darkgrey {
+    background-color: darkgray;
+}
+
+.palevioletred {
+    background-color: palevioletred;
 }
 
 #font {

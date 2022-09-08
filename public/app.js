@@ -27,8 +27,8 @@ function buildSite() {
     divcalculator.appendChild(calcTitle);
 
     //Kallar på funktionerna så att de körs
-    buildSettings(settings);
-    buildCalculator(calculator);
+    buildSettings(settings, calculator);
+    buildCalculator(calculator, settings);
 
 } 
 
@@ -41,14 +41,24 @@ function buildSettings() {
     slctColor.innerText = 'Color';
 
     const colorPalevioletred = document.createElement('option');
-    colorPalevioletred.setAttribute('value', 'colorpalevioletred');
+    colorPalevioletred.setAttribute('value', 'palevioletred');
     colorPalevioletred.innerText = 'Palevioletred';
+    slctColor.onchange = (event) => {
+        calculator.className = event.target.value;
+        settings.className = event.target.value;
+
+    };
     slctColor.appendChild(colorPalevioletred);
 
-    const colorCoral = document.createElement('option');
-    colorCoral.setAttribute('value', 'colorcoral')
-    colorCoral.innerText = 'Coral';
-    slctColor.appendChild(colorCoral);
+    const colorDarkgrey = document.createElement('option');
+    colorDarkgrey.setAttribute('value', 'darkgrey')
+    colorDarkgrey.innerText = 'Darkgrey';
+    slctColor.onchange = (event) => {
+        calculator.className = event.target.value;
+        settings.className = event.target.value;
+    
+    };
+    slctColor.appendChild(colorDarkgrey);
 
     //Font dropdown
     const slctFont = document.createElement('select');
@@ -59,6 +69,7 @@ function buildSettings() {
     const fontSize12 = document.createElement('option');
     fontSize12.setAttribute('value', 'fontsize12')
     fontSize12.innerText = 'Font size 12px';
+    //slctFont.onchange = (event) => 
     slctFont.appendChild(fontSize12);
 
     const fontSize14 = document.createElement('option');
