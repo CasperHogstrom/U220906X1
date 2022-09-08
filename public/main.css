@@ -40,7 +40,7 @@ body {
     background-color: darkgray;
 }
 
-.palevioletred {
+.palevioletred{
     background-color: palevioletred;
 }
 
@@ -48,6 +48,14 @@ body {
     width: fit-content;
     margin: 3px;
     width: fit-content;
+}
+
+.fontsize14 {
+    font-size: 14px;
+}
+
+.fontsize12 {
+    font-size: 12px;
 }
 
 #addition {

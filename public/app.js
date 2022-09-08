@@ -7,6 +7,7 @@ function buildSite() {
     app.appendChild(divsettings);
 
     const settingsTitle = document.createElement('h1');
+    settingsTitle.setAttribute('id', 'settingtitle')
     settingsTitle.innerHTML = "Settings";
     settings.appendChild(settingsTitle);
 
@@ -16,13 +17,14 @@ function buildSite() {
 
     //Gör knappen, i calculator div, som ska gömma settings div
     const HideShowButton = document.createElement('button');
-    HideShowButton.setAttribute('id', 'HSButton')
+    HideShowButton.setAttribute('id', 'HSButton');
     HideShowButton.innerText = 'Settings';
     //Kolla om settings div är synlig eller ej
     HideShowButton.onclick = () => settings.hidden = !settings.hidden;
     calculator.appendChild(HideShowButton);
 
     const calcTitle = document.createElement('h1');
+    calcTitle.setAttribute('id', 'calculatortitle');
     calcTitle.innerHTML = "Calculator";
     divcalculator.appendChild(calcTitle);
 
@@ -43,20 +45,21 @@ function buildSettings() {
     const colorPalevioletred = document.createElement('option');
     colorPalevioletred.setAttribute('value', 'palevioletred');
     colorPalevioletred.innerText = 'Palevioletred';
-    slctColor.onchange = (event) => {
-        calculator.className = event.target.value;
-        settings.className = event.target.value;
-
-    };
     slctColor.appendChild(colorPalevioletred);
 
     const colorDarkgrey = document.createElement('option');
     colorDarkgrey.setAttribute('value', 'darkgrey')
     colorDarkgrey.innerText = 'Darkgrey';
     slctColor.onchange = (event) => {
-        calculator.className = event.target.value;
-        settings.className = event.target.value;
-    
+        
+        calculator.classList.remove('darkgrey');
+        calculator.classList.remove('palevioletred');
+        settings.classList.remove('darkgrey'); 
+        settings.classList.remove('palevioletred'); 
+
+        calculator.classList.add(event.target.value);
+        settings.classList.add(event.target.value);
+
     };
     slctColor.appendChild(colorDarkgrey);
 
@@ -69,12 +72,22 @@ function buildSettings() {
     const fontSize12 = document.createElement('option');
     fontSize12.setAttribute('value', 'fontsize12')
     fontSize12.innerText = 'Font size 12px';
-    //slctFont.onchange = (event) => 
     slctFont.appendChild(fontSize12);
 
     const fontSize14 = document.createElement('option');
     fontSize14.setAttribute('value', 'fontsize14');
     fontSize14.innerText = 'Font size 14px';
+    slctFont.onchange = (event) => {
+        
+        calculator.classList.remove('fontsize12');
+        calculator.classList.remove('fontsize14');
+        settings.classList.remove('fontsize12'); 
+        settings.classList.remove('fontsize14'); 
+
+        calculator.classList.add(event.target.value);
+        settings.classList.add(event.target.value);
+
+    };
     slctFont.appendChild(fontSize14);
 
     //skriv ut select elementen
