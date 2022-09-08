@@ -1,6 +1,4 @@
 buildSite();
-buildSettings();
-buildCalculator();
 
 function buildSite() {
     
@@ -8,32 +6,57 @@ function buildSite() {
     divsettings.setAttribute('id', 'settings')
     app.appendChild(divsettings);
 
-    const divcalculator = document.createElement('div');
-    divcalculator.setAttribute('id', 'calculator');
-    app.appendChild(divcalculator);
-
     const settingsTitle = document.createElement('h1');
     settingsTitle.innerHTML = "Settings";
     settings.appendChild(settingsTitle);
 
+    //Gör knappen, i app div, som ska gömma settings div
+    const HideShowButton = document.createElement('button');
+    HideShowButton.setAttribute('id', 'HSButton')
+    HideShowButton.innerText = 'Settings';
+   //Kolla om settings div är synlig eller ej
+    HideShowButton.onclick = () => settings.hidden = !settings.hidden;
+    app.appendChild(HideShowButton);
+
+    const divcalculator = document.createElement('div');
+    divcalculator.setAttribute('id', 'calculator');
+    app.appendChild(divcalculator);
+
     const divCalcTitle = document.createElement('h1');
     divCalcTitle.innerHTML = "Calculator";
-    calculator.appendChild(divCalcTitle);
+    divcalculator.appendChild(divCalcTitle);
+
+    buildSettings(settings);
+    
+    buildCalculator(calculator);
+
 } 
 
 function buildSettings() {
     
-    const btnColor = document.createElement('button');
-    btnColor.setAttribute('id', 'color');
-    btnColor.setAttribute('name', 'color');
-    btnColor.innerText = 'Color';
-    settings.appendChild(btnColor);
+    const slctColor = document.createElement('select');
+    slctColor.setAttribute('id', 'color');
+    slctColor.setAttribute('name', 'color');
+    slctColor.innerText = 'Color';
+    settings.appendChild(slctColor);
 
-    const btnFont = document.createElement('button');
-    btnFont.setAttribute('id', 'font');
-    btnFont.setAttribute('name', 'font');
-    btnFont.innerText = 'font';
-    settings.appendChild(btnFont);
+    const slctFont = document.createElement('select');
+    slctFont.setAttribute('id', 'font');
+    slctFont.setAttribute('name', 'font');
+    slctFont.innerText = 'font';
+
+    const ColorCoral = document.createElement('option');
+    ColorCoral.setAttribute('value', 'colorcoral')
+    ColorCoral.innerText = 'Coral';
+    slctColor.appendChild(ColorCoral);
+
+    const ColorPalevioletred = document.createElement('option');
+    ColorPalevioletred.setAttribute('value', 'colorpalevioletred');
+    slctColor.appendChild(ColorPalevioletred);
+
+    settings.appendChild(slctFont);
+
+
 }
 
 function buildCalculator() {    
