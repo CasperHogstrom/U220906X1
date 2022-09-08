@@ -50,8 +50,8 @@ body {
     width: fit-content;
 }
 
-.fontsize14 {
-    font-size: 14px;
+.fontsize16 {
+    font-size: 16px;
 }
 
 .fontsize12 {
@@ -82,4 +82,12 @@ body {
 #number2 {
     margin: 10px;
     width: 20%;
+}
+
+#results {
+    margin-right: 5%;
+}
+
+#clearbutton {
+    margin-bottom: 5%;
 }
